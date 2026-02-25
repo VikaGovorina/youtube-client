@@ -1,0 +1,34 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 24px;
+    font-size: 10px;
+    scrollbar-color: #aaaaaa;
+}
+
+.containerHeader {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+/* .containerHeader:hover {
+    background-color: #aaaaaa;
+} */
+
+.ytVideoContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.ytVideoContainer > :not(:first-child) {
+    margin-top: 16px;
+}
+
+.filterSpan {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+}
