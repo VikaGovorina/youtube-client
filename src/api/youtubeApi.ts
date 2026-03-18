@@ -40,14 +40,6 @@ export const YoutubeApi = {
 
     async fetchChannelInfoByIds(channelIds: string[]): Promise<YoutubeChannelInfoResponse> { 
         try {
-            // const filteredChannelIds = [...new Set(channelIds.filter(id => id && id.trim()))];
-
-            // if (filteredChannelIds.length === 0) {
-            //     return { items: [] };
-            // }
-
-            // console.log('Fetching channels:', filteredChannelIds);
-
             const result = await fetch(`${BASE_URL}/channels?` +
                 new URLSearchParams({
                     part: 'snippet',

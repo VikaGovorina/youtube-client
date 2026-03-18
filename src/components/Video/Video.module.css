@@ -95,8 +95,6 @@
     line-height: 1.8rem;
     font-weight: 400;
     max-height: 3.6rem;
-
-    /* color: #aaa  ; */
 }
 
 .dateAgo::before {
@@ -106,3 +104,41 @@
     font-weight: 400;
     line-height: 1.8rem;
 }
+
+.channelInfo {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.channelAvatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.channelName {
+    color: var(--text-secondary);
+    align-self: center;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    max-height: 1.8rem;
+}
+
+.descriptionContainer {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+}
+
+.description {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; 
+    line-clamp: 2;
+}
+/* добавить дефолтное фото профиля */

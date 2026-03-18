@@ -1,3 +1,4 @@
+import type { YoutubeChannelInfo } from "../types/youtube";
 
 const durationRegex = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/;
 
@@ -57,4 +58,8 @@ export function formatDateAgo(publishedAt: string) {
     }
     const years = Math.floor(months / 12);
     return `${years} years ago`;
+}
+
+export function checkChannelImgExists(channelData: YoutubeChannelInfo) {
+    // TODO
 }

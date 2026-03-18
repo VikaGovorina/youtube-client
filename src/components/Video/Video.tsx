@@ -1,12 +1,14 @@
 import type { YoutubeVideoData } from "../../types/youtube";
 import styles from './Video.module.css';
-import { formatDuration, formatViewCount, formatDateAgo } from "../../utils/youtubeDataFormatters";
+import { formatDuration, formatViewCount, formatDateAgo, checkChannelImgExists } from "../../utils/youtubeDataFormatters";
 
 
 export const Video = function Video({ videoData, channelData }: YoutubeVideoData) {
     const duration = formatDuration(videoData.contentDetails.duration);
     const viewCount = formatViewCount(videoData.statistics.viewCount);
     const dateAgo = formatDateAgo(videoData.snippet.publishedAt);
+    const channelImg = checkChannelImgExists(channelData); // TODO
+    console.log(`channelTitle: ${channelData.snippet.title}, channelImg: ${channelData.snippet.thumbnails.medium.url}`);
 
     return (
         <div className={styles.videoContainer}>
@@ -31,6 +33,14 @@ export const Video = function Video({ videoData, channelData }: YoutubeVideoData
                         <span className={styles.viewsNumber}>{viewCount} views</span>
                         <span className={styles.dateAgo}>{dateAgo}</span>
                     </div>
+                    <div className={styles.channelInfo}>
+                        <img className={styles.channelAvatar} src={channelData.snippet.thumbnails.medium.url} alt={channelData.snippet.title}></img>
+                        <span className={styles.channelName}>{channelData.snippet.title}</span>
+                    </div>
+                    <div className={styles.descriptionContainer}>
+                        <span className={styles.description}>{videoData.snippet.description}</span>
+                    </div>
+                    
                 </div> 
             </div>
             

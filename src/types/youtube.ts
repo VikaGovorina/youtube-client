@@ -33,6 +33,7 @@ export interface YoutubeVideoInformation {
         };
         publishedAt: string;
         channelId: string;
+        description: string;
     };
 }
 
